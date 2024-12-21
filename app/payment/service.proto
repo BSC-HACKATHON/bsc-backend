@@ -16,5 +16,24 @@ service PaymentService {
 // Request and response for GeneratePaymentLink
 message GeneratePaymentLinkRequest {
     string user_id = 1; // ID of the user
-    do
+    double amount = 2;  // Amount to be paid
+}
+
+message GeneratePaymentLinkResponse {
+    string payment_link = 1; // Generated payment link
+}
+
+// Request and response for StorePayment
+message StorePaymentRequest {
+    string payment_id = 1;   // Unique ID for the payment
+    string user_id = 2;      // ID of the user making the payment
+    double amount = 3;       // Amount paid
+    string currency = 4;     // Currency of the payment
+    string status = 5;       // Status of the payment (e.g., "completed", "pending")
+}
+
+message StorePaymentResponse {
+    bool success = 1;        // Indicates if the payment was successfully stored
+    string message = 2;      // Additional information about the operation
+}
 

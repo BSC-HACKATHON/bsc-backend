@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	pb "path/to/your/project/paymentpb"
+	pb "github.com/lai0xn/bsc-payment/pkg/pb"
 
 	"google.golang.org/grpc"
 )
