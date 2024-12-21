@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package payment;
+
+option go_package = "./pkg/pb";
+
+// Service definition
+service PaymentService {
+    // Generate a payment link
+    rpc GeneratePaymentLink (GeneratePaymentLinkRequest) returns (GeneratePaymentLinkResponse);
+    
+    // Store a payment
+    rpc StorePayment (StorePaymentRequest) returns (StorePaymentResponse);
+}
+
+// Request and response for GeneratePaymentLink
+message GeneratePaymentLinkRequest {
+    string user_id = 1; // ID of the user
+    do
+
