@@ -1,0 +1,10 @@
+version: "2"
+sql:
+  - schema: "./db/migrations"         # Path to your schema/migration files
+    queries: "./db/queries"           # Path to your query files
+    engine: "sqlite"                  # Database engine
+    gen:
+      go:                             # Go-specific configuration
+        package: "db"                 # Package name for generated code
+        out: "./db"                   # Path for generated files
+
