@@ -7,6 +7,7 @@ type UserDto struct {
 	FirstName    string    `json:"first_name"`
 	LastName     string    `json:"last_name"`
 	Password     string    `json:"password"`
+	IDNumber     int       `json:"identity_card_number"`
 	DateOfBirth  time.Time `json:"date_of_birth"`
 	PlaceOfBirth string    `json:"place_of_birth"`
 	Gender       string    `json:"gender"`

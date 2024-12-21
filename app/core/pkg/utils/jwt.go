@@ -18,3 +18,14 @@ func GenerateJWT(id uint, email string, name string) (string, error) {
 
 	return tokenString, nil
 }
+
+func ParseToken(tokenString string) (*jwt.Token, error) {
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		return []byte(config.SECRET_KEY), nil
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return token, nil
+}

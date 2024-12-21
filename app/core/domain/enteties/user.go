@@ -14,6 +14,7 @@ type User struct {
 	Password     string
 	DateOfBirth  time.Time
 	PlaceOfBirth string
+	IDNumber     int
 	Gender       string
 	IsActive     bool
 	IsStaff      bool
