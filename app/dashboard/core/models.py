@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateTimeField()
     place_of_birth = models.CharField(max_length=255)
     gender = models.CharField(
         max_length=10,

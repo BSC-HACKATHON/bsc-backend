@@ -123,6 +123,16 @@ USE_I18N = True
 USE_TZ = True
 
 
+# Celery settings
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'  # RabbitMQ URL
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# To store task results (optional, requires django-celery-results)
+INSTALLED_APPS += ['django_celery_results']
+CELERY_RESULT_BACKEND = 'django-db'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
